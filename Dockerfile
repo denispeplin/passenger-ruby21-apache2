@@ -39,7 +39,8 @@ RUN rm -f /etc/service/memcached/down
 # ...put your own build instructions here...
 
 # passenger + apache https://www.phusionpassenger.com/documentation/Users%20guide%20Apache.html#install_on_debian_ubuntu
-RUN export DEBIAN_FRONTEND=noninteractive # will it work? https://github.com/phusion/baseimage-docker/issues/58
+# setting ENV here may cause trouble, see https://docs.docker.com/reference/builder/
+#RUN export DEBIAN_FRONTEND=noninteractive # will it work? https://github.com/phusion/baseimage-docker/issues/58
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 RUN sudo apt-get install -y apt-transport-https ca-certificates
 ADD passenger.list /etc/apt/sources.list.d/passenger.list
