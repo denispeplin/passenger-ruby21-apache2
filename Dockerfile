@@ -41,6 +41,14 @@ RUN rm -f /etc/service/memcached/down
 # passenger + apache https://www.phusionpassenger.com/documentation/Users%20guide%20Apache.html#install_on_debian_ubuntu
 # setting ENV here may cause trouble, see https://docs.docker.com/reference/builder/
 #RUN export DEBIAN_FRONTEND=noninteractive # will it work? https://github.com/phusion/baseimage-docker/issues/58
+
+# sshd
+RUN sed -i 's/SSHD_OPTS=/SSHD_OPTS=-p2222/' /etc/default/ssh
+RUN /usr/bin/ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -C '' -N ''
+RUN /usr/bin/ssh-keygen -t rsa -f /etc/ssh/ssh_host_dsa_key -C '' -N ''
+RUN sudo service ssh restart
+
+# Passenger
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 RUN sudo apt-get install -y apt-transport-https ca-certificates
 ADD passenger.list /etc/apt/sources.list.d/passenger.list
