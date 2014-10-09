@@ -28,3 +28,9 @@ Then login to running container:
   docker-bash YOUR-CONTAINER-ID
 
 By default, `docker-bash` will open a Bash session.
+
+Deployment:
+
+* Run `chsh www-data -s /bin/sh`
+* Fill in with your public key `~www-data/.ssh/authorized_keys` on Docker host.
+
