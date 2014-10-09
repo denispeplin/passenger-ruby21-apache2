@@ -55,3 +55,8 @@ RUN sudo service apache2 restart
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# init process
+RUN mkdir /etc/service/apache2
+ADD service/apache2/run /etc/service/apache2/run
+
