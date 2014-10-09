@@ -9,7 +9,9 @@ To look around in the image, run:
 
 To run container in background:
 
-    docker run -d --net host denispeplin/passenger-ruby21-apache
+    /usr/bin/docker run -d --net host denispeplin/passenger-ruby21-apache
+
+Put this command to /etc/rc.local
 
 It'll output docker container ID to console.
 
