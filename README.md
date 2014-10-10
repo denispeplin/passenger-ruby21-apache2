@@ -19,10 +19,15 @@ To look around in the image, run:
 
     docker run --rm -t -i denispeplin/passenger-ruby21-apache bash -l
 
+To prepare apache2 folder:
+    docker cp <IMAGE_ID>:/etc/apache2 /etc/
+
 To run container in background:
 
     /bin/mkdir -p /var/lib/gems && \
-      /usr/bin/docker run -d --net host -v /var/lib/gems:/var/lib/gems -v /opt:/opt denispeplin/passenger-ruby21-apache
+      /usr/bin/docker run -d --net host \
+      -v /var/lib/gems:/var/lib/gems -v /opt:/opt -v /etc/apache2:/etc/apache2 \
+      denispeplin/passenger-ruby21-apache
 
 Put this command to /etc/rc.local
 
