@@ -54,4 +54,5 @@ must be heavily modified. To avoid this, and run some commands on Docker host, r
 * Put www-data git public and private keys to `~www-data/.ssh/`
 * Login to Docker host, run `su - www-data` and `ssh YOUR-GIT-REPO` to establish host key.
 * Create top-level project directory in `/opt` with permissions assigned to `www-data`.
+* Allow www-data on Docker host, run: `echo "www-data ALL=NOPASSWD: /usr/local/bin/bundle" >>/etc/sudoers`
 
