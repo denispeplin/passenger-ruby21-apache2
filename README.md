@@ -51,4 +51,7 @@ must be heavily modified. To avoid this, and run some commands on Docker host, r
 
 * Run `chsh www-data -s /bin/sh`
 * Fill in with your public key `~www-data/.ssh/authorized_keys` on Docker host.
+* Put www-data git public and private keys to `~www-data/.ssh/`
+* Login to Docker host, run `su - www-data` and `ssh YOUR-GIT-REPO` to establish host key.
+* Create top-level project directory in `/opt` with permissions assigned to `www-data`.
 
