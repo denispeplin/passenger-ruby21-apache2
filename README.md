@@ -21,7 +21,8 @@ To look around in the image, run:
 
 To run container in background:
 
-    /usr/bin/docker run -d --net host -v /opt:/opt denispeplin/passenger-ruby21-apache
+    /bin/mkdir -p /var/lib/gems && \
+      /usr/bin/docker run -d --net host -v /var/lib/gems:/var/lib/gems -v /opt:/opt denispeplin/passenger-ruby21-apache
 
 Put this command to /etc/rc.local
 
