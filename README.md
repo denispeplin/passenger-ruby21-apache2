@@ -3,6 +3,18 @@ passenger-ruby21-apache2
 
 Docker build for passenger-ruby21-apache2.
 
+To build, run:
+
+    sudo docker build -t denispeplin/passenger-ruby21-apache .
+
+To push, run:
+
+    sudo docker push denispeplin/passenger-ruby21-apache
+
+To pull, run:
+
+    sudo docker pull denispeplin/passenger-ruby21-apache
+
 To look around in the image, run:
 
     docker run --rm -t -i denispeplin/passenger-ruby21-apache bash -l
