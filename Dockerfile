@@ -54,7 +54,7 @@ RUN sudo a2enmod passenger
 RUN sudo service apache2 restart
 
 # freetds
-sudo apt-get install freetds-dev freetds-bin tdsodbc
+RUN sudo apt-get install -y freetds-dev freetds-bin tdsodbc
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
