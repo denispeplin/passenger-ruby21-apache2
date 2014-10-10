@@ -43,6 +43,11 @@ By default, `docker-bash` will open a Bash session.
 
 Deployment:
 
+Workaround:
+To install everything install into docker container directly, `Capistrano`'s `config/deploy.rb`
+must be heavily modified. To avoid this, and run some commands on Docker host, run
+`scp host-install.sh <DOCKER_HOST>:` and execite it there.
+
 * Run `chsh www-data -s /bin/sh`
 * Fill in with your public key `~www-data/.ssh/authorized_keys` on Docker host.
 
