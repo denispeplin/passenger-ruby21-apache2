@@ -64,3 +64,7 @@ RUN mkdir /etc/service/apache2
 ADD apache2/silent.sh /sbin/apache2silent
 ADD apache2/run.sh /etc/service/apache2/run
 
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
