@@ -27,7 +27,7 @@ To run container in background:
     /bin/mkdir -p /var/lib/gems && \
       /usr/bin/docker run -d --net host \
       -v /var/lib/gems:/var/lib/gems -v /opt:/opt -v /etc/apache2:/etc/apache2 \
-      -v /etc/ssl:/etc/ssl -v /mnt:/mnt \
+      -v /etc/ssl:/etc/ssl -v /mnt:/mnt -v /etc/localtime:/etc/localtime \
       denispeplin/passenger-ruby21-apache
 
 Put this command to /etc/rc.local
